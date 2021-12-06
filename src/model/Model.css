@@ -1,0 +1,95 @@
+.Modelbody {
+  background-color: #302c2c;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, 0);
+  border-radius: 12px;
+  width: 20rem;
+  height: 28rem;
+  box-shadow: rgb(0, 0, 0) 0px 5px 15px;
+}
+.Modelcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: chocolate;
+  padding: 5px;
+}
+
+.title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.submitForm {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.fname {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid chocolate;
+  padding: 5px;
+}
+
+.lname {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid chocolate;
+  padding: 5px;
+}
+
+.email {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid chocolate;
+  padding: 5px;
+}
+
+.subject {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid chocolate;
+  padding: 5px;
+}
+
+input {
+  color: white;
+  font-size: medium;
+}
+
+input#file-upload-button {
+  background-color: chocolate;
+}
+
+.submit-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.submit-btn button {
+  border: none;
+  outline: none;
+
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: white;
+  background-color: chocolate;
+  font-weight: 600;
+}
