@@ -10,7 +10,7 @@
 }
 .Card {
   margin-left: 4.5rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   background-color: #302c2c;
   border-radius: 12px;
   width: 20rem;
@@ -36,4 +36,17 @@
 .Subject {
   color: white;
   padding: 20px;
+}
+
+/* <================MOBILE=================> */
+
+@media (min-width: 375px) {
+  .Card {
+    margin-left: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .Card {
+    margin-left: 2.5rem;
+  }
 }
