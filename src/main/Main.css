@@ -14,7 +14,7 @@
   background-color: #302c2c;
   border-radius: 12px;
   width: 20rem;
-  height: 24rem;
+  height: fit-content;
   box-shadow: rgb(0, 0, 0) 0px 5px 15px;
 }
 
@@ -22,6 +22,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.cardimg {
+  width: 20rem;
+  border-radius: 12px;
+}
+
 .Name {
   display: flex;
   justify-content: space-around;
@@ -43,10 +49,25 @@
 @media (min-width: 375px) {
   .Card {
     margin-left: 1.5rem;
+    margin-top: 1rem;
+    height: fit-content;
   }
 }
+/* <================iPad=================> */
 @media (min-width: 768px) {
   .Card {
     margin-left: 2.5rem;
+    height: fit-content;
+  }
+}
+/* <================ipadPro=================> */
+@media (min-width: 1024px) {
+  .Card {
+    margin-top: 0.2rem;
+    width: 18rem;
+    height: fit-content;
+  }
+  .cardimg {
+    width: 18rem;
   }
 }
