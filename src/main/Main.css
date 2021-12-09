@@ -62,6 +62,10 @@
 }
 /* <================ipadPro=================> */
 @media (min-width: 1024px) {
+  .Main {
+    display: flex;
+    align-content: flex-start;
+  }
   .Card {
     margin-top: 0.2rem;
     width: 18rem;

@@ -34,20 +34,88 @@ function Model({ closeModel }) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    var object = {
-      firstName: Firstname,
-      lastName: Lastname,
-      email: Email,
-      subject: Subject,
-      image: Image,
-    };
-    // window.location.reload();
+    if (
+      errFirstname === false &&
+      errLastname === false &&
+      errEmail === false &&
+      errSubject === false &&
+      errImage === false
+    ) {
+      var object = {
+        firstName: Firstname,
+        lastName: Lastname,
+        email: Email,
+        subject: Subject,
+        image: Image,
+      };
 
-    setDataSet((result) => [...result, object]);
-    closeModel(false);
+      setDataSet((result) => [...result, object]);
+      closeModel(false);
+    } else {
+      alert("InValid");
+    }
   };
 
   console.log(dataSet);
+
+  // <===================form vilidation ===============>
+
+  const [errFirstname, setErrFirstname] = useState(false);
+  const [errLastname, setErrLastname] = useState(false);
+  const [errEmail, setErrEmail] = useState(false);
+  const [errSubject, setErrSubject] = useState(false);
+  const [errImage, setErrImage] = useState(false);
+
+  function userHandler1(e) {
+    let item = e.target.value;
+    if (item.length < 4) {
+      setErrFirstname(true);
+    } else {
+      setErrFirstname(false);
+      setFirstname(item);
+    }
+  }
+  function userHandler2(e) {
+    let item = e.target.value;
+    if (item.length < 4) {
+      setErrLastname(true);
+    } else {
+      setErrLastname(false);
+      setLastname(item);
+    }
+  }
+  function userHandler3(e) {
+    let item = e.target.value;
+    if (item.length < 4) {
+      setErrEmail(true);
+    } else {
+      setErrEmail(false);
+      setEmail(item);
+    }
+  }
+  function userHandler4(e) {
+    let item = e.target.value;
+    if (item.length < 4) {
+      setErrSubject(true);
+    } else {
+      setErrSubject(false);
+      setSubject(item);
+    }
+  }
+
+  function userHandler5(e) {
+    let item = e.target.files[0];
+    if (item.length < 1) {
+      setErrImage(true);
+    } else {
+      setErrImage(false);
+      setImage(URL.createObjectURL(item));
+    }
+  }
+
+  console.log("FirstName", Firstname);
+  console.log("LastName", Lastname);
+
   return (
     <div className="Modelbody">
       <div className="Modelcontainer">
@@ -62,34 +130,59 @@ function Model({ closeModel }) {
           <input
             className="fname"
             placeholder="First Name"
-            onChange={(e) => setFirstname(e.target.value)}
-          ></input>{" "}
+            onChange={userHandler1}
+          ></input>
+          {errFirstname ? (
+            <span style={{ color: "#db3e3e" }}>Firt Name Not Valid</span>
+          ) : (
+            ""
+          )}
           <br />
           <input
             className="lname"
             placeholder="Last Name"
-            onChange={(e) => setLastname(e.target.value)}
-          ></input>{" "}
+            onChange={userHandler2}
+          ></input>
+          {errLastname ? (
+            <span style={{ color: "#db3e3e" }}>Last Name Not Valid</span>
+          ) : (
+            ""
+          )}
           <br />
           <input
             className="email"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={userHandler3}
           ></input>
+          {errEmail ? (
+            <span style={{ color: "#db3e3e" }}>Email Not Valid</span>
+          ) : (
+            ""
+          )}
           <br />
           <input
             className="subject"
             placeholder="Subject"
-            onChange={(e) => setSubject(e.target.value)}
+            onChange={userHandler4}
           ></input>
+          {errSubject ? (
+            <span style={{ color: "#db3e3e" }}>Subject Not Valid</span>
+          ) : (
+            ""
+          )}
           <br />
           <input
             type="file"
             id="myfile"
             name="myfile"
-            onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
+            onChange={userHandler5}
             multiple
           ></input>
+          {errImage ? (
+            <span style={{ color: "#db3e3e" }}>No file chosen</span>
+          ) : (
+            ""
+          )}
           <br />
           <div className="submit-btn">
             <button>SUBMIT</button>

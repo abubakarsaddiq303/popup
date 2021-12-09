@@ -1,15 +1,14 @@
 import React from "react";
 import "./Popup.css";
-import image1 from "../popup/123.jpeg";
 
 function Popup({ closePopup, data }) {
   console.log("popup", data);
   return (
     <div className="PopupBody">
       <div className="PopupContainer">
-        <button className="CloseBtn" onClick={() => closePopup(false)}>
-          X
-        </button>
+        <div className="CloseBtn">
+          <button onClick={() => closePopup(false)}>X</button>
+        </div>
 
         <div className="row">
           <div className="column1">

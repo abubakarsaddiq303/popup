@@ -37,6 +37,10 @@
   width: 90%;
 }
 .CloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.CloseBtn button {
   margin-left: auto;
   background-color: transparent !important;
   border: none !important;
@@ -52,6 +56,7 @@
   border: none;
   color: chocolate;
   font-weight: 600;
+  font-size: medium;
 }
 
 .recordbtn {
