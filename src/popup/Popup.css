@@ -26,6 +26,7 @@
   border-top-left-radius: 12px;
   height: 24rem;
   width: 100%;
+  object-fit: cover;
 }
 .column2 {
   width: 50%;
